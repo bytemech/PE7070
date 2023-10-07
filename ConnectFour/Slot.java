@@ -4,8 +4,8 @@ import java.util.Observable;
 /**
  * Slot
  * This class handles the state of each slot in the game. Extending observable in preparation for the addition of a GUI.
- * @author Lauren Scott
- * @version Student Sample Code
+ * @author Lauren Scott & Byron Glover
+ * @version Assignment Hand-In - PE7070
  */
 public class Slot extends Observable{
     private String state;//The current state of the slot
@@ -59,5 +59,15 @@ public class Slot extends Observable{
             return false;
         }
     }  
+    /**
+     * toString() 
+     * This method overrides the toString() method to allow desired formatting when this object is converted toString(). 
+     * Used for debugging the values in the state of the game vs. what is being shown in the UI. 
+     */
+    @Override
+    public String toString() {
+        return this.state.toString();
+    }
+
 }//End of class Slot
 

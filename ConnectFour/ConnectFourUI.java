@@ -6,8 +6,8 @@ import java.util.Scanner;
  * ConnectFourUI
  * Text-based user interface class for the ConnectFour game
  *
- * @author Lauren Scott
- * @version Student Sample Code
+ * @author Lauren Scott & Byron Glover
+ * @version Assignment Hand-In - PE7070
  */
 public class ConnectFourUI {
     private Scanner consoleReader; // Reads inputs from the console
@@ -144,9 +144,9 @@ public class ConnectFourUI {
     public void displayGame() {
         moves = game.getMoves();
 
-        for (int r = 0; r <= game.getRowCount(); r++) {
+        for (int r = 0; r < game.getRowCount(); r++) {
             String spacers = "";
-            for (int c = 0; c <= game.getColCount(); c++) {
+            for (int c = 0; c < game.getColCount(); c++) {
                 if (moves[r][c].getState().equals(ConnectFour.PLAYERMOVE)) {
                     System.out.print("|" + ConnectFour.PLAYERMOVE);
                 } else if (moves[r][c].getState().equals(ConnectFour.COMPUTERMOVE)) {
@@ -161,7 +161,7 @@ public class ConnectFourUI {
             System.out.println(" ");
         }
         String numbers = "";
-        for (int c = 0; c <= game.getColCount(); c++) {
+        for (int c = 0; c < game.getColCount(); c++) {
             numbers = numbers + " " + Integer.toString(c);
         }
         System.out.println(numbers);
@@ -175,11 +175,17 @@ public class ConnectFourUI {
     public void makeMove() {
         System.out.println("Please enter the column you wish to select");
         int playerMove = consoleReader.nextInt();
-        game.addMove(playerMove, true);
-        game.generateComputerMove();
-        displayGame();
-        checkWin();
-        System.out.println(game.getMoves().toString());
+        boolean move = game.addMove(playerMove, true);
+        if (!move) {
+            displayGame();
+            System.out.println("Your move was impossible. Please select another action.");
+            displayGame();
+        } else {
+
+            game.generateComputerMove();
+            displayGame();
+            checkWin();
+        }
     }
 
     /**
