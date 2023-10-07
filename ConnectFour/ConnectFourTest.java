@@ -15,17 +15,23 @@ import org.junit.jupiter.api.Test;
 public class ConnectFourTest
 {
     private Slot moves[][];
+    private ConnectFour fixture;
 
-    @Test
-    public void checkForWinneronRow() {
-        ConnectFour fixture = new ConnectFour();
-      
+    @BeforeEach
+    public void BeforeEach() {
+        //Create a clean game instance and populate the test-local moves array with Slots. 
+        fixture = new ConnectFour();
         moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
         for (int c = 0; c < fixture.getColCount(); c++) {
             for (int r = 0; r < fixture.getRowCount(); r++) {
                 moves[r][c] = new Slot(r, c);
             }
         }
+    }
+
+    @Test
+    public void checkForWinneronRow() {
+        //Check that a winner by the row is correctly detected
         moves[0][0].setState("x");
         moves[0][1].setState("x");
         moves[0][2].setState("x");
@@ -36,14 +42,7 @@ public class ConnectFourTest
 
     @Test
     public void checkForWinneronColumn() {
-        ConnectFour fixture = new ConnectFour();
-      
-        moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
-        for (int c = 0; c < fixture.getColCount(); c++) {
-            for (int r = 0; r < fixture.getRowCount(); r++) {
-                moves[r][c] = new Slot(r, c);
-            }
-        }
+        //Check that a winner by the column is correctly detected
         moves[0][0].setState("x");
         moves[1][0].setState("x");
         moves[2][0].setState("x");
@@ -54,14 +53,7 @@ public class ConnectFourTest
 
     @Test
     public void checkForWinneronRightDiagonal() {
-        ConnectFour fixture = new ConnectFour();
-      
-        moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
-        for (int c = 0; c < fixture.getColCount(); c++) {
-            for (int r = 0; r < fixture.getRowCount(); r++) {
-                moves[r][c] = new Slot(r, c);
-            }
-        }
+        //Check that a winner by the right diagonal is correctly detected
         moves[0][0].setState("x");
         moves[1][1].setState("x");
         moves[2][2].setState("x");
@@ -72,14 +64,7 @@ public class ConnectFourTest
 
     @Test
     public void checkForWinneronLeftDiagonal() {
-        ConnectFour fixture = new ConnectFour();
-      
-        moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
-        for (int c = 0; c < fixture.getColCount(); c++) {
-            for (int r = 0; r < fixture.getRowCount(); r++) {
-                moves[r][c] = new Slot(r, c);
-            }
-        }
+        //Check that a winner by the left diagonal is correctly detected
         moves[3][0].setState("x");
         moves[2][1].setState("x");
         moves[1][2].setState("x");
@@ -90,14 +75,7 @@ public class ConnectFourTest
 
     @Test
     public void checkForNoWinnerCorrectlyDetected() {
-        ConnectFour fixture = new ConnectFour();
-      
-        moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
-        for (int c = 0; c < fixture.getColCount(); c++) {
-            for (int r = 0; r < fixture.getRowCount(); r++) {
-                moves[r][c] = new Slot(r, c);
-            }
-        }
+        //Check that when there is no winner this is correctly detected
         moves[3][0].setState("x");
         moves[2][1].setState("x");
         moves[1][4].setState("x");
@@ -105,8 +83,6 @@ public class ConnectFourTest
         String x = fixture.checkGrid(moves, "x", "x");
         assertNotEquals("x",x);
     }
-
-
 
     /**
      * Tears down the test fixture.
@@ -116,8 +92,8 @@ public class ConnectFourTest
     @AfterEach
     public void tearDown()
     {
-
-        //Ensure the moves array is cleared after each test.
+        //Ensure the fixture and moves properties are cleared after each test.
+        fixture = null;
         moves = null;
     }
 }
