@@ -17,6 +17,8 @@ public class ConnectFour {
     public static final String COMPUTERMOVE = "o";// computer slot game state
     private static final int rowCount = 5; // Should be a true integer, beginning at 0.
     private static final int colCount = 6; // Should be a true integer, beginning at 0.
+    private static int[] lastPlayerMove = new int[2];
+    private static int[] lastComputerMove = new int[2];
 
     /**
      * Constructor of the class ConnectFour
@@ -48,6 +50,46 @@ public class ConnectFour {
      */
     public Slot[][] getMoves() {
         return moves;
+    }
+
+    /**
+     * setMoves
+     * This method sets a 2D array with all of the current moves in the game.
+     * This is a natural number.
+     * 
+     * @return the moves in the game currently
+     */
+    public void setMoves(Slot[][] moveSlots) {
+        moves = moveSlots;
+    }
+
+    /**
+     * setLastMove
+     * This method sets the last moved property on the ConnectFour class.
+     * 
+     * @param Slot Last slot moved
+     * @param player Boolean value - if player move, is true.
+     */
+
+     public void setLastMove(int row, int col, boolean player) {
+        if (player) {
+            lastPlayerMove[0] = row;
+            lastPlayerMove[1] = col;
+        }
+        else { 
+            lastComputerMove[0] = row;
+            lastComputerMove[1] = col;
+        }
+     }
+
+    /**
+     * undoLastMove
+     * This method undoes the last moves in the game state.
+     * 
+     */
+    public void undoLastMove() {
+        moves[lastPlayerMove[0]][lastPlayerMove[1]].setState(EMPTYSLOT);
+        moves[lastComputerMove[0]][lastComputerMove[1]].setState(EMPTYSLOT);
     }
 
     /**

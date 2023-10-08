@@ -29,6 +29,7 @@ public class Assign {
             this.ableToAssign = false;
             return;
         }
+        game.setLastMove(row, col, player);
         assignMove(player);
         this.ableToAssign =  true;
     }
@@ -52,10 +53,12 @@ public class Assign {
      * @param player a Boolean value to determine whether it is a computer/player move
      */
     public void assignMove(boolean player) {
-        if (player == true) 
+        if (player == true) {
             moves[row][col].setState(ConnectFour.PLAYERMOVE);
-        else
+        }
+        else {
             moves[row][col].setState(ConnectFour.COMPUTERMOVE);
+        }
     }
     /**
      * getRow

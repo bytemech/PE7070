@@ -95,36 +95,50 @@ public class ConnectFourUI {
      * To be implemented by student - This method should save the current game state
      */
     public void saveGame() {
-        System.out.println("Code not yet implemented");
+        SaveController.writeSaveFile(game);
+        displayGame();
+        System.out.println("Game saved.");
+        menu();
+
     }
 
     /**
      * undoMove
-     * To be implemented by student - this method should undo the previous move made
-     * in the game, along with the corresponding computer move
+     * Undoes the previous move made in the game, along with the corresponding computer move
      */
     public void undoMove() {
-        System.out.println("Code not yet implemented");
+        game.undoLastMove();
+        displayGame();
+        System.out.println("Last move has been undone.");
+        menu();
     }
 
     /**
      * loadGame
-     * To be implemented by student - this method should load a previous saved game
+     * Loads the saved state of the game.
      */
     public void loadGame() {
-        System.out.println("Code not yet implemented");
+        if (SaveController.readSaveFile(game)) {
+            displayGame();
+            System.out.println(
+                    "Game loaded from save. Please make sure if you want to keep this game saved, save the game again.");
+            menu();
+        } else {
+            displayGame();
+            System.out.println("No saved game was found.");
+            menu();
+        }
     }
 
     /**
      * clearGame
-     * This method clears the game board and any record of moves, to reset the game
+     * This method clears the game board and any record of moves, to reset the game.
      */
     public void clearGame() {
-
         game.clearGame();
         displayGame();
+        System.out.println("No saved game was found.");
         menu();
-
     }
 
     /**
@@ -179,9 +193,8 @@ public class ConnectFourUI {
         if (!move) {
             displayGame();
             System.out.println("Your move was impossible. Please select another action.");
-            displayGame();
+            menu();
         } else {
-
             game.generateComputerMove();
             displayGame();
             checkWin();

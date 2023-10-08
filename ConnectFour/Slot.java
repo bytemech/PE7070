@@ -1,4 +1,5 @@
 package ConnectFour;
+import java.io.Serializable;
 import java.util.Observable;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Observable;
  * @author Lauren Scott & Byron Glover
  * @version Assignment Hand-In - PE7070
  */
-public class Slot extends Observable{
+public class Slot extends Observable implements Serializable {
     private String state;//The current state of the slot
     private int row, col;//The row and column number of the slot 
     /**
@@ -40,6 +41,24 @@ public class Slot extends Observable{
      */
     public String getState(){
         return state;
+        
+    }
+    /**
+     * getRow
+     * This provides the current row of the slot
+     * @return the current row of the slot
+     */
+    public int getRow(){
+        return row;
+        
+    }
+    /**
+     * getCol
+     * This provides the current column of the slot
+     * @return the current column of the slot
+     */
+    public int getCol(){
+        return col;
         
     }
     /**
