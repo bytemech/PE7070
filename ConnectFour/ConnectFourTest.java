@@ -112,7 +112,7 @@ public class ConnectFourTest {
     @Test
     void testAddMove() {
         fixture.addMove(0, true);
-        assertEquals("x", fixture.getMoves()[4][0].getState());
+        assertEquals("x", fixture.getMoves()[fixture.getRowCount() - 1][0].getState());
     }
 
     /**

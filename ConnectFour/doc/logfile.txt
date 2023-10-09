@@ -1,0 +1,180 @@
+Project documentation
+<---- javadoc command: ---->
+C:\Program Files\BlueJ\jdk\bin\javadoc.exe
+-sourcepath
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour
+-source
+17
+-classpath
+C:\Program Files\BlueJ\lib\bluejcore.jar;C:\Program Files\BlueJ\lib\javafx-base-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-base-20.0.1.jar;C:\Program Files\BlueJ\lib\javafx-controls-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-controls-20.0.1.jar;C:\Program Files\BlueJ\lib\javafx-fxml-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-graphics-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-graphics-20.0.1.jar;C:\Program Files\BlueJ\lib\javafx-media-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-media-20.0.1.jar;C:\Program Files\BlueJ\lib\javafx-swing-20.0.1-win.jar;C:\Program Files\BlueJ\lib\javafx-web-20.0.1-win.jar;C:\Program Files\BlueJ\lib\junit-4.12.jar;C:\Program Files\BlueJ\lib\junit-jupiter-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-api-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-params-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-commons-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-engine-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-launcher-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-suite-api-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-vintage-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files\BlueJ\lib\opentest4j-1.2.0.jar;C:\Program Files\BlueJ\lib\lang-stride.jar;C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour
+-d
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-doctitle
+ConnectFour
+-windowtitle
+ConnectFour
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-link
+https://docs.oracle.com/en/java/javase/17/docs/api/
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/Debugger.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/SaveController.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFourTUI.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFourUIInterface.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFour.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFourTest.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFourUI.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/ConnectFourGUI.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/Slot.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/Assign.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/SaveControllerTest.java
+C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour/SlotGUI.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\Debugger.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\SaveController.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFourTUI.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFourUIInterface.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFour.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFourTest.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFourUI.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\ConnectFourGUI.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\Slot.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\Assign.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\SaveControllerTest.java...
+Loading source file C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\SlotGUI.java...
+Constructing Javadoc information...
+warning: unknown enum constant Status.STABLE
+  reason: class file for org.apiguardian.api.API$Status not found
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+warning: unknown enum constant Status.STABLE
+Building index for all the packages and classes...
+Standard Doclet version 17.0.4.1+1
+Building tree for all the packages and classes...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\Assign.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFour.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFourGUI.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFourTest.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFourTUI.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFourUI.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\ConnectFourUIInterface.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\Debugger.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\SaveController.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\SaveControllerTest.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\Slot.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\SlotGUI.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\package-summary.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\package-tree.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\constant-values.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\serialized-form.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\overview-tree.html...
+Building index for all classes...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\allclasses-index.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\allpackages-index.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\index-all.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\index.html...
+Generating C:\Users\gloverb\src\Northumbria\PE7070\ConnectFour\doc\help-doc.html...
+100 warnings
