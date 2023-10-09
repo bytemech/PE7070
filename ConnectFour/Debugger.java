@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
  */
 
 public class Debugger {
-    private static boolean isEnabled = true; // Change value to enable/disable logging of debug messages to console.
+    private static boolean isEnabled = false; // Change value to enable/disable logging of debug messages to console.
     public static JTextArea textArea = null;
 
     /**

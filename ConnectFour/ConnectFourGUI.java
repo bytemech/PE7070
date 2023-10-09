@@ -7,7 +7,8 @@ import javax.swing.*;
 public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
     private JLabel title = new JLabel("ConnectFour");
     private JPanel container = new JPanel();
-    private JPanel grid = new JPanel(new GridLayout(game.getRowCount() + 1, game.getColCount())); //Add 1 to rowCount for row controls.
+    private JPanel grid = new JPanel(new GridLayout(game.getRowCount() + 1, game.getColCount())); // Add 1 to rowCount
+                                                                                                  // for row controls.
     private JPanel controls = new JPanel();
     private JTextArea textArea = new JTextArea(20, 20);
 
@@ -68,8 +69,8 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
 
     private void displayGame() {
         grid.removeAll();
-        for (int r = 0; r <= game.getRowCount(); r++) { 
-            for (int c = 0; c < game.getColCount(); c++) { 
+        for (int r = 0; r <= game.getRowCount(); r++) {
+            for (int c = 0; c < game.getColCount(); c++) {
 
                 if (r == game.getRowCount()) {
                     final Integer column = Integer.valueOf(c);
@@ -98,7 +99,8 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
 
     @Override
     public void startNewGame() {
-        clearGame();
+        game.clearGame();
+        displayGame();
         displayWelcomeMessage();
     }
 
@@ -119,6 +121,7 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
         if (SaveController.readSaveFile(game)) {
             printToUser(
                     "Game loaded from save. Please make sure if you want to keep this game saved, save the game again.");
+            displayGame();
         } else {
             printToUser("No saved game was found.");
         }
