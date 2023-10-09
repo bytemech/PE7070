@@ -12,7 +12,7 @@ public class SaveController {
     private static String userHome = System.getProperty("user.home");
     private static String saveFileExtension = ".connectFourSave";
 
-    public static File findSaveFile() {
+    private static File findSaveFile() {
         File dirObj = new File(userHome);
         File files[] = dirObj.listFiles();
 

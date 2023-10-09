@@ -26,12 +26,14 @@ public class Slot extends Observable implements Serializable {
     }
     /**
      * setState
-     * This method sets the current state of the slot
+     * This method sets the current state of the slot and notifies any observers.
      * @param newState - the new state of the slot
      */
     public void setState(String newState) {
         if(isValidState(newState) == true) {
             this.state = newState;
+            setChanged();
+            notifyObservers();
         } 
     }
     /**
@@ -82,6 +84,7 @@ public class Slot extends Observable implements Serializable {
      * toString() 
      * This method overrides the toString() method to allow desired formatting when this object is converted toString(). 
      * Used for debugging the values in the state of the game vs. what is being shown in the UI. 
+     * @return the current state property as a string.
      */
     @Override
     public String toString() {

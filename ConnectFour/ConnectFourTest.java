@@ -1,9 +1,6 @@
 package ConnectFour;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.Arrays;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +13,6 @@ import org.junit.jupiter.api.Test;
  */
 public class ConnectFourTest {
     private Slot moves[][];
-    private Slot blankMoves[][];
     private ConnectFour fixture;
 
     @BeforeEach
@@ -25,12 +21,6 @@ public class ConnectFourTest {
         // Slots.
         fixture = new ConnectFour();
         moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
-        for (int c = 0; c < fixture.getColCount(); c++) {
-            for (int r = 0; r < fixture.getRowCount(); r++) {
-                moves[r][c] = new Slot(r, c);
-            }
-        }
-        blankMoves = new Slot[fixture.getRowCount()][fixture.getColCount()];
         for (int c = 0; c < fixture.getColCount(); c++) {
             for (int r = 0; r < fixture.getRowCount(); r++) {
                 moves[r][c] = new Slot(r, c);
@@ -108,13 +98,15 @@ public class ConnectFourTest {
     @Test
     void testAddMove() {
         fixture.addMove(0, true);
-        assertEquals("x",fixture.getMoves()[4][0].getState());
+        assertEquals("x", fixture.getMoves()[4][0].getState());
     }
 
     @Test
     void testClearGame() {
-        blankMoves = fixture.getMoves();
-        moves[0][0].setState("x");
+        moves[3][0].setState("x");
+        moves[2][1].setState("x");
+        moves[1][4].setState("x");
+        moves[0][3].setState("x");
         fixture.setMoves(moves);
         fixture.clearGame();
         boolean allBlank = true;
