@@ -10,6 +10,7 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
     private JPanel grid = new JPanel(new GridLayout(game.getRowCount() + 1, game.getColCount())); // Add 1 to rowCount
                                                                                                   // for row controls.
     private JPanel controls = new JPanel();
+    private JPanel controlButtons = new JPanel();
     private JTextArea textArea = new JTextArea(20, 20);
 
     public ConnectFourGUI() {
@@ -27,32 +28,37 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
         displayGame();
         controls.setLayout(new BoxLayout(controls, BoxLayout.Y_AXIS));
         container.add(controls);
-        Dimension buttonDimension = new Dimension(100, 30);
 
+        Dimension buttonDimension = new Dimension(100, 30);
+  
         JButton newGameButton = new JButton("New Game");
         newGameButton.addActionListener(e -> startNewGame());
         newGameButton.setMinimumSize(buttonDimension);
-        controls.add(newGameButton);
+        controlButtons.add(newGameButton);
 
         JButton clearGameButton = new JButton("Clear Game");
         clearGameButton.addActionListener(e -> clearGame());
         clearGameButton.setMinimumSize(buttonDimension);
-        controls.add(clearGameButton);
+        controlButtons.add(clearGameButton);
 
         JButton saveButton = new JButton("Save Game");
         saveButton.addActionListener(e -> saveGame());
         saveButton.setMinimumSize(buttonDimension);
-        controls.add(saveButton);
+        controlButtons.add(saveButton);
 
         JButton undoButton = new JButton("Undo Move");
         undoButton.addActionListener(e -> undoMove());
         undoButton.setMinimumSize(buttonDimension);
-        controls.add(undoButton);
+        controlButtons.add(undoButton);
 
         JButton loadButton = new JButton("Load Game");
         loadButton.addActionListener(e -> loadGame());
         loadButton.setMinimumSize(buttonDimension);
-        controls.add(loadButton);
+        controlButtons.add(loadButton);
+
+        controlButtons.setLayout(new GridLayout(controlButtons.getComponentCount(),1));
+        controls.add(controlButtons);
+
 
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
