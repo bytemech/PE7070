@@ -8,10 +8,26 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
+/**
+ * SaveController
+ * This class implements statics to facilitate File I/O for saving and reading
+ * game state
+ * 
+ * @author Byron Glover
+ * @version Assignment Hand-In - PE7070
+ */
 public class SaveController {
     private static String userHome = System.getProperty("user.home");
     private static String saveFileExtension = ".connectFourSave";
 
+    /**
+     * Finds and returns the save file. It looks in the user home directory and if
+     * it finds a file with the extension saveFileExtension.
+     * 
+     * 
+     * @return The save file or null if not found or there is no save file to search
+     *         for ( in which case the return value is null
+     */
     private static File findSaveFile() {
         File dirObj = new File(userHome);
         File files[] = dirObj.listFiles();
@@ -26,6 +42,11 @@ public class SaveController {
         return null;
     }
 
+    /**
+     * Writes the state of the game to a file.
+     * 
+     * @param game - Game to write the state of.
+     */
     public static void writeSaveFile(ConnectFour game) {
 
         LocalDateTime timeStamp = LocalDateTime.now();
@@ -45,6 +66,15 @@ public class SaveController {
 
     }
 
+    /**
+     * Reads the save file from disk and sets the game state. This is done by
+     * reading the state stored in the file and then deleting the file.
+     * 
+     * @param game - The ConnectFour to be modified
+     * 
+     * @return True if the file was read false if it wasn't found or could not be
+     *         read ( in which case nothing is done )
+     */
     public static boolean readSaveFile(ConnectFour game) {
         File saveFile = findSaveFile();
 
@@ -58,7 +88,7 @@ public class SaveController {
                 Debugger.log("State read as: " + Arrays.deepToString(moveSlots));
                 readerStream.close();
                 game.setMoves(moveSlots);
-                saveFile.delete(); //Remove the save file once this is read into the game.
+                saveFile.delete(); // Remove the save file once this is read into the game.
                 return true;
             } catch (Exception e) {
                 Debugger.log(e.toString());

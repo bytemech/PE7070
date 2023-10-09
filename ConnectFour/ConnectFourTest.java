@@ -15,10 +15,12 @@ public class ConnectFourTest {
     private Slot moves[][];
     private ConnectFour fixture;
 
+    /**
+     * Initializes the data before each test. This is called by the
+     * TestCase#beforeEach ( Object ) method
+     */
     @BeforeEach
     public void BeforeEach() {
-        // Create a clean game instance and populate the test-local moves arrays with
-        // Slots.
         fixture = new ConnectFour();
         moves = new Slot[fixture.getRowCount()][fixture.getColCount()];
         for (int c = 0; c < fixture.getColCount(); c++) {
@@ -29,9 +31,7 @@ public class ConnectFourTest {
     }
 
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     * Clears the fixture and moves properties after each test.
      */
     @AfterEach
     public void tearDown() {
@@ -40,9 +40,11 @@ public class ConnectFourTest {
         moves = null;
     }
 
+    /**
+     * Check that a winner by the row is correctly detected
+     */
     @Test
     public void checkForWinneronRow() {
-        // Check that a winner by the row is correctly detected
         moves[0][0].setState("x");
         moves[0][1].setState("x");
         moves[0][2].setState("x");
@@ -51,9 +53,11 @@ public class ConnectFourTest {
         assertEquals("x", x);
     }
 
+    /**
+     * Checks to see if a winner is detected by the column.
+     */
     @Test
     public void checkForWinneronColumn() {
-        // Check that a winner by the column is correctly detected
         moves[0][0].setState("x");
         moves[1][0].setState("x");
         moves[2][0].setState("x");
@@ -62,9 +66,11 @@ public class ConnectFourTest {
         assertEquals("x", x);
     }
 
+    /**
+     * Checks if a winner by the right diagonal is detected.
+     */
     @Test
     public void checkForWinneronRightDiagonal() {
-        // Check that a winner by the right diagonal is correctly detected
         moves[0][0].setState("x");
         moves[1][1].setState("x");
         moves[2][2].setState("x");
@@ -73,9 +79,11 @@ public class ConnectFourTest {
         assertEquals("x", x);
     }
 
+    /**
+     * Checks if a winner by the left diagonal is detected.
+     */
     @Test
     public void checkForWinneronLeftDiagonal() {
-        // Check that a winner by the left diagonal is correctly detected
         moves[3][0].setState("x");
         moves[2][1].setState("x");
         moves[1][2].setState("x");
@@ -84,9 +92,12 @@ public class ConnectFourTest {
         assertEquals("x", x);
     }
 
+    /**
+     * Checks to see if there is no winner correctly detected in the grid. This is a
+     * test for bug #
+     */
     @Test
     public void checkForNoWinnerCorrectlyDetected() {
-        // Check that when there is no winner this is correctly detected
         moves[3][0].setState("x");
         moves[2][1].setState("x");
         moves[1][4].setState("x");
@@ -95,12 +106,18 @@ public class ConnectFourTest {
         assertNotEquals("x", x);
     }
 
+    /**
+     * Tests adding a move to the state performs as expected.
+     */
     @Test
     void testAddMove() {
         fixture.addMove(0, true);
         assertEquals("x", fixture.getMoves()[4][0].getState());
     }
 
+    /**
+     * Tests that the clearGame method clears the game to it's blank state.
+     */
     @Test
     void testClearGame() {
         moves[3][0].setState("x");
@@ -122,15 +139,20 @@ public class ConnectFourTest {
         assertEquals(true, allBlank);
     }
 
+    /**
+     * Tests that getMoves returns an object of the correct type
+     */
     @Test
     void testGetMoves() {
-        // Test that getMoves returns a moves object
         assertSame(moves.getClass(), fixture.getMoves().getClass());
     }
 
+    /**
+     * Test that setMoves sets moves that are accurately returned by getMoves and
+     * checks that the result is the same
+     */
     @Test
     void testSetAndGetMoves() {
-        // Test that setMoves sets moves that are accurately returned by getMoves.
         moves[0][0].setState("x");
         fixture.setMoves(moves);
         assertEquals(moves, fixture.getMoves());

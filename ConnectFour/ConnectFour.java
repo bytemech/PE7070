@@ -15,8 +15,8 @@ public class ConnectFour {
     public static final String EMPTYSLOT = "-"; // Blank slot game state
     public static final String PLAYERMOVE = "x";// Player slot game state
     public static final String COMPUTERMOVE = "o";// computer slot game state
-    private static final int rowCount = 5; // Should be a true integer, beginning at 0.
-    private static final int colCount = 6; // Should be a true integer, beginning at 0.
+    private static final int rowCount = 5; // Should be a natural number, beginning at 1.
+    private static final int colCount = 6; // Should be a natural number, beginning at 1.
     private static int[] lastPlayerMove = new int[2];
     private static int[] lastComputerMove = new int[2];
 
@@ -30,7 +30,7 @@ public class ConnectFour {
 
     /**
      * createGame
-     * This method creates a new set of blank moves in preparation to play the game.
+     * Creates the game. This is called by the constructor
      */
     public void createGame() {
         moves = new Slot[rowCount][colCount];
@@ -44,7 +44,6 @@ public class ConnectFour {
     /**
      * getMoves
      * This method returns a 2D array with all of the current moves in the game.
-     * This is a natural number.
      * 
      * @return the moves in the game currently
      */
@@ -55,9 +54,8 @@ public class ConnectFour {
     /**
      * setMoves
      * This method sets a 2D array with all of the current moves in the game.
-     * This is a natural number.
      * 
-     * @return the moves in the game currently
+     * @param moveSlots - An array of Slot
      */
     public void setMoves(Slot[][] moveSlots) {
         moves = moveSlots;
@@ -67,20 +65,19 @@ public class ConnectFour {
      * setLastMove
      * This method sets the last moved property on the ConnectFour class.
      * 
-     * @param Slot Last slot moved
-     * @param player Boolean value - if player move, is true.
+     * @param row    - The row of the last move
+     * @param col    - The column of the last move
+     * @param player - True if the player is moving
      */
-
-     public void setLastMove(int row, int col, boolean player) {
+    public void setLastMove(int row, int col, boolean player) {
         if (player) {
             lastPlayerMove[0] = row;
             lastPlayerMove[1] = col;
-        }
-        else { 
+        } else {
             lastComputerMove[0] = row;
             lastComputerMove[1] = col;
         }
-     }
+    }
 
     /**
      * undoLastMove
@@ -106,6 +103,7 @@ public class ConnectFour {
     /**
      * getColCount
      * This method returns a 2D array with all of the current moves in the game
+     * This is a natural number.
      * 
      * @return the number of columns in the game, as an int.
      */
@@ -117,9 +115,10 @@ public class ConnectFour {
      * addMove
      * This method adds a move to the game
      * 
-     * @param col    - The column that the player/computer has selected
-     * @param player - A Boolean value denoting whether the move is made by the
-     *               player or the computer
+     * @param col    - The column to move to
+     * @param player - True if the player is allowed to move
+     * 
+     * @return True if the move can be
      */
     public boolean addMove(int col, boolean player) {
         Assign move = new Assign(this, col, player);
@@ -185,10 +184,12 @@ public class ConnectFour {
      */
     public String checkGrid(Slot[][] moves, String MOVETOKEN, String returnValue) {
         Debugger.log("checkGrid: current grid = " + Arrays.deepToString(moves));
-        // Start at bottom of grid and move up. Convert rowcount to int/index from natural number. 
+        // Start at bottom of grid and move up. Convert rowcount to int/index from
+        // natural number.
         for (int r = rowCount - 1; r >= 0; r--) {
             Debugger.log("checkGrid: Checking row " + r + "for " + MOVETOKEN);
-            // Start at left hand side of grid and move across. Convert rowcount to int/index from natural number. 
+            // Start at left hand side of grid and move across. Convert rowcount to
+            // int/index from natural number.
             for (int c = colCount - 1; c >= 0; c--) {
                 if (moves[r][c].getState().equals(MOVETOKEN)) {
                     Debugger.log("checkGrid: Found " + MOVETOKEN + " in Row " + r + " column " + c);
@@ -260,7 +261,6 @@ public class ConnectFour {
                         rplus3cminus3 = moves[r + 3][c - 3].getState();
                     } catch (ArrayIndexOutOfBoundsException e) {
                     }
-
 
                     Debugger.log("checkGrid: Row " + r + " column " + c + " rcplus1: " + rcplus1);
                     Debugger.log("checkGrid: Row " + r + " column " + c + " rcplus2: " + rcplus2);
