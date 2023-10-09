@@ -107,6 +107,17 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
     }
 
     /**
+     * Public static void main - the first method that runs when the project is run.
+     * This method initialises a new instance of the ConnectFour UI.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        ConnectFourGUI ui = new ConnectFourGUI();
+    }
+
+
+    /**
      * displayGame
      * Displays the game on the screen.
      */
@@ -128,16 +139,6 @@ public class ConnectFourGUI extends ConnectFourUI implements ActionListener {
                 grid.doLayout();
             }
         }
-    }
-
-    /**
-     * Public static void main - the first method that runs when the project is run.
-     * This method initialises a new instance of the ConnectFour UI.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        ConnectFourGUI ui = new ConnectFourGUI();
     }
 
     /**

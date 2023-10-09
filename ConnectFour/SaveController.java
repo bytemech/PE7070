@@ -78,7 +78,7 @@ public class SaveController {
     public static boolean readSaveFile(ConnectFour game) {
         File saveFile = findSaveFile();
 
-        if (!saveFile.exists()) {
+        if (saveFile == null || !saveFile.exists()) {
             return false;
         } else {
             try {

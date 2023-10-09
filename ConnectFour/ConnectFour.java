@@ -15,8 +15,8 @@ public class ConnectFour {
     public static final String EMPTYSLOT = "-"; // Blank slot game state
     public static final String PLAYERMOVE = "x";// Player slot game state
     public static final String COMPUTERMOVE = "o";// computer slot game state
-    private static final int rowCount = 5; // Should be a natural number, beginning at 1.
-    private static final int colCount = 6; // Should be a natural number, beginning at 1.
+    private static final int rowCount = 6; // Should be a natural number, beginning at 1.
+    private static final int colCount = 7; // Should be a natural number, beginning at 1.
     private static int[] lastPlayerMove = new int[2];
     private static int[] lastComputerMove = new int[2];
 
