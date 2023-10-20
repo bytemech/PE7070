@@ -1,4 +1,4 @@
-package ConnectFour;
+ 
 import java.io.Serializable;
 import java.util.Observable;
 

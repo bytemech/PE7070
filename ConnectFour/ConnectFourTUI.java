@@ -1,4 +1,4 @@
-package ConnectFour;
+ 
 
 import java.util.Scanner;
 
